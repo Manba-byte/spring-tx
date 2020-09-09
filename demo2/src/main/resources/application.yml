@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: demo2
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    status-page-url-path: //RootController/get
